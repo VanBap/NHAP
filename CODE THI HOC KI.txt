@@ -1,0 +1,24 @@
+// CODE THANG BO M DAY //
+class DanhSachSV {
+	vector<SinhVien> a;
+public:
+	DanhSachSV (vector<SinhVien> a_) {
+		
+		for (int i = a_.size()-1; i >=0; i--) {
+			a.push_back(a_[i]);
+		}
+	}
+	vector<string> timLech(string lop) {
+		vector<string> result;
+		for (int i = 0; i < a.size();i++) {
+			if (a[i].maLop == lop)
+			{
+				if (abs(a[i].diemCK - a[i].diemTP) >= 2.3 && abs(a[i].diemCK - a[i].diemTP) >= 2.6) // xap xi 2.5
+				{
+					result.push_back(a[i].maSV);
+				}
+			}
+		 }
+		return result;
+	}
+};
